@@ -1,6 +1,4 @@
-### introduction
-> Very streamlined react initial project for testing, using cases, examples.
+### react进阶之高阶组件 demo代码库
 
-方便自己写react-demo, 不用每次create-react-app, 产生很多useless configuration.
-
-不是全家桶, 只包括了webpack基础配置, babel, react... 其他库, 工具需要自行安装, 自行配置.
+[原文](https://github.com/sunyongjian/blog/issues/25)
+[react-quick-start](https://github.com/sunyongjian/react-quick-start)
