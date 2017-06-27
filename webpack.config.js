@@ -6,7 +6,7 @@ const config = require('./config');
 
 module.exports = {
   entry: {
-	  app: './src/index.js',
+	  app: './src/index.jsx',
     vendor: ['react', 'react-dom'],
   },
   output: {
@@ -17,33 +17,36 @@ module.exports = {
 	  rules: [
 		  {
 			  test: /\.(jsx|js)$/,
-        loader: 'babel-loader',
-      },
-      {
+      loader: 'babel-loader',
+    },
+    {
   			test: /\.(less|css)$/,
-        use: ['style-loader', 'css-loader', 'less-loader'],
-      },
-      {
+      use: ['style-loader', 'css-loader', 'less-loader'],
+    },
+    {
   			test: /\.(png|jpg|svg)$/,
-        loader: 'file-loader',
-      },
-    ],
+      loader: 'file-loader',
+    },
+  ],
   },
   plugins: [
 	  new HtmlWebpackPlugin({
-      title: 'quick-start',
-      template: 'index.html',
-    }),
+    title: 'quick-start',
+    template: 'index.html',
+  }),
     new webpack.optimize.CommonsChunkPlugin({
 		  name: 'vendor',
     }),
-		new OpenBrowserPlugin({
-			url: 'http://localhost:3333/'
-		})
+    new OpenBrowserPlugin({
+      url: 'http://localhost:3333/',
+    }),
   ],
-	devServer: {
-		contentBase: path.resolve(__dirname, 'public'),
-		port: config.port,
-		compress: true,
-	}
+  devServer: {
+    contentBase: path.resolve(__dirname, 'public'),
+    port: config.port,
+    historyApiFallback: true,
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx',],
+  }
 };
